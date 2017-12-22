@@ -9,13 +9,19 @@ export class CheeseList extends React.Component {
     }
 
     render() {
-        return (
-            <ul>
-                {this.props.cheeses.map( (cheese, index) => {
-                    return <li key={index}>{cheese}</li>;
-                })}
-            </ul>
-        );
+        console.log(this.props.error);
+        if(this.props.error) {
+            return (<p>There was a problem with your request.</p>);
+        }
+        else {
+            return (
+                <ul>
+                    {this.props.cheeses.map( (cheese, index) => {
+                        return <li key={index}>{cheese}</li>;
+                    })}
+                </ul>
+            );
+        }
     }
     
 }

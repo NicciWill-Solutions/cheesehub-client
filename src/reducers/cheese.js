@@ -21,6 +21,7 @@ export function cheeseReducer(state=initialState, action) {
         })
     }
     else if(action.type === actions.FETCH_CHEESES_ERROR){
+        console.log(state, action);
         return Object.assign({}, state, {
             error: action.error,
             loading: false
