@@ -18,7 +18,7 @@ export const fetchCheesesError = (error, message) => ({
 
 export const fetchCheeses = () => dispatch => {
     dispatch(fetchCheesesRequest());
-    fetch('http://localhost:8080/api/cheeses') //http://localhost:8080/api/cheeses || https://cheesehub-nw.herokuapp.com/api/cheeses/
+    fetch('https://cheesehub-nw.herokuapp.com/api/cheeses/') //http://localhost:8080/api/cheeses || https://cheesehub-nw.herokuapp.com/api/cheeses/
     .then(res => {
         if (!res.ok) {
             return console.error('There was a problem.');
