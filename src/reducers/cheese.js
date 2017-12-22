@@ -4,7 +4,8 @@ import * as actions from '../actions/cheese';
 const initialState = {
     cheeses: [],
     loading: false,
-    error: null
+    error: null,
+    message: ''
 };
 
 export function cheeseReducer(state=initialState, action) {
@@ -21,9 +22,10 @@ export function cheeseReducer(state=initialState, action) {
         })
     }
     else if(action.type === actions.FETCH_CHEESES_ERROR){
-        console.log(state, action);
+        console.log(action);
         return Object.assign({}, state, {
             error: action.error,
+            message: action.message,
             loading: false
         })
     }
